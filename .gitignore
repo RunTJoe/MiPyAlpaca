@@ -127,3 +127,11 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Template python files
+templates/*.py
+
+# Raspberry Pico libs and IDE stuff
+.picowgo
+.vscode/
+lib/

@@ -1,0 +1,7 @@
+[
+  {"switchnr": 0,"name": "GPIO OUT","pincfg": {"pin": 15,"pinfct": "OUTP","initval": 1},"canwrite": true,"min": 0,"max": 1,"step": 1,"swfct": "MiPyPin","descr": "Output test pin"},
+  {"switchnr": 1,"name": "GPIO In","pincfg": {"pin": 16,"pinfct": "INP","pull": "PULL_DOWN"},"canwrite": false,"min": 0,"max": 1,"step": 1,"swfct": "MiPyPin","descr": "Input test pin"},
+  {"switchnr": 2,"name": "PWM test","pincfg": {"pin": 14,"pinfct": "PWM","initval": 19000,"freq": 1000},"canwrite": true,"min": 0,"max": 65535,"step": 1,"swfct": "MiPyPin","descr": "PWM test pin"},
+  {"switchnr": 3,"name": "ADC test","pincfg": {"pin": 28,"pinfct": "ADC"},"canwrite": false,"min": 0,"max": 65535,"step": 1,"swfct": "MiPyPin","descr": "ADC test pin"}
+  {"switchnr": 4,"name": "Temperature", "canwrite": false, "min": -10, "max": 99, "step": 0.01, "swfct":"UserDef", "descr": "Temperature DS18B20"},
+]

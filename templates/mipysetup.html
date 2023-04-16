@@ -1,0 +1,152 @@
+{% args title, tab, srvcfg %}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    input[type=text],
+    select,
+    textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid rgb(250, 161, 27);
+      border-radius: 4px;
+      resize: vertical;
+      float: right;
+
+    }
+
+    label {
+      padding: 12px 12px 12px 0;
+      display: inline-block;
+    }
+
+    input[type=submit] {
+      background-color: #088bf6;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      float: right;
+    }
+
+    input[type=submit]:hover {
+      background-color: #082cf6;
+    }
+
+    .container {
+      border-radius: 5px;
+      background-color: rgb(249, 177, 59);
+      padding: 20px;
+    }
+
+    .col-space {
+      float: left;
+      width: 10%;
+      margin-top: 6px;
+    }
+
+
+    .col-label {
+      float: left;
+      width: 25%;
+      margin-top: 6px;
+    }
+
+    .col-input {
+      float: left;
+      width: 25%;
+      margin-top: 6px;
+    }
+
+    .title {
+      text-align: center;
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+    @media screen and (max-width: 600px) {
+      .col-label,
+      .col-input,
+      .col-space,
+      input[type=submit] {
+        width: 100%;
+        margin-top: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="title">
+      <h2>{{ title }}</h2>
+      <h3>Server settings</h3>
+    </div>
+
+
+    <p><b>The following devices are configured on this Alpaca Server:</b></p>
+    <table class="center">
+      <thead>
+        <tr>
+          <td class="boldyellow">Device Type</td>
+          <td class="boldyellow">Device Number</td>
+          <td class="boldyellow">Description</td>
+        </tr>
+      </thead>
+      <tbody>
+        {% for device in tab %}
+        <tr>
+          <td>{{ device["DeviceType"] }}</td>
+          <td>{{ device["DeviceNumber"] }}</td>
+          <td>{{ device["DeviceName"] }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table><br>
+
+
+    <form form method="POST">
+      <div class="row">
+        <div class="col-space"></div>
+        <div class="col-label">
+          <label for="srvport">Server Port</label>
+        </div>
+        <div class="col-input">
+          <input type="text" id="srvport" name="srvport" value={{ srvcfg["serverPort"] }} maxlength="5">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-space"></div>
+        <div class="col-label">
+          <label for="discport">Discovery Port</label>
+        </div>
+        <div class="col-input">
+          <input type="text" id="discport" name="discport" value={{ srvcfg["discoveryPort"] }} maxlength="5">
+        </div>
+      </div>
+      <div class="row">
+        <br>
+        <input type="submit" value="Save">
+      </div>
+    </form>
+  </div>
+</body>
+
+</html>
