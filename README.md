@@ -21,13 +21,13 @@ Simple controlling of input/output pins, setting of PWM values and reading of AD
 
 For the configuration shown above, N.I.N.A will display the following switch device (will be automatically adapted to your pin configuration):
 
-![](resources\images\SwExample1NINA.jpg)
+![](resources/images/SwExample1NINA.jpg)
 
 Now you can set the output pins, read input pins, set PWM outputs and read ADC inputs from N.I.N.A..
 
 Here is a simple breadboard setup testing the example above on a Raspberry Pico W. You can switch on/off one LED with GPIO output pin, read the state of the button, set the brightness of another LED via PWM and read the voltage at the trim potentiometer.
 
-![](resources\images\SwExample1BBoard.jpg)
+![](resources/images/SwExample1BBoard.jpg)
 
 
 
@@ -50,7 +50,7 @@ MiPyAlpaca requires two additional packages:
 For installation of these packages see the corresponding documentation. If you use the Thonny IDE (https://thonny.org/), you can also use the Tools/Manage packages function. In Thonny, the file system of my installation looks like that:
 
 
-![](resources\images\MiPyAlpacaFiles.jpg)
+![](resources/images/MiPyAlpacaFiles.jpg)
 
 
 
@@ -113,7 +113,7 @@ The Alpaca server main setup page can be called by
 
 where *host* is usually the ip address of your device.
 
-![](resources\images\MgmtAPIPorts.jpg)
+![](resources/images/MgmtAPIPorts.jpg)
 
 
 
@@ -194,13 +194,13 @@ async def main():
 
 Here is the switch window of N.I.N.A. for switchExample2 with the temperature gauge:
 
-![](resources\images\SwExample2NINA.jpg)
+![](resources/images/SwExample2NINA.jpg)
 
 
 
 This is a sample breadboard setup for this example:
 
-![](resources\images\SwExample2BBoard.jpg)
+![](resources/images/SwExample2BBoard.jpg)
 
 
 
